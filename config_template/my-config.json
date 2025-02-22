@@ -116,7 +116,7 @@
         "America",
         "Others"
       ],
-      "default": "Direct"
+      "default": "direct"
     },
     {
       "tag":"OpenAI",
