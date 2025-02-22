@@ -766,7 +766,7 @@
         "tag": "geosite-epic",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/guyuuan/guyuuan/sing-box-geosite@main/rule/Epic.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/guyuuan/sing-box-geosite@main/rule/Epic.srs",
         "download_detour": "direct"
       },
       {
