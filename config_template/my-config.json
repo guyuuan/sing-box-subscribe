@@ -92,6 +92,33 @@
       ]
     },
     {
+      "tag":"Steam",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag":"SteamRegionCheck",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ],
+      "default": "Direct"
+    },
+    {
       "tag":"OpenAI",
       "type":"selector",
       "outbounds":[
@@ -479,6 +506,9 @@
         "rule_set": ["geosite-hbo", "geosite-primevideo"],
         "outbound": "Streaming"
       },
+      {"rule_set": "geosite-steam", "outbound": "Steam"},
+      {"rule_set": "geosite-steam-region-check", "outbound": "SteamRegionCheck"},
+      {"rule_set": ["geosite-steam-cn","geosite-epic"], "outbound": "China"},
       {
         "rule_set": "geosite-geolocation-!cn",
         "outbound": "Global"
@@ -679,6 +709,34 @@
         "download_detour": "direct"
       },
       {
+        "tag": "geosite-steam",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/guyuuan/sing-box-geosite@main/rule/Steam.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-steam-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/guyuuan/sing-box-geosite@main/rule/SteamCN.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-steam-region-check",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/guyuuan/sing-box-geosite@main/rule/SteamRegionCheck.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-epic",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/guyuuan/guyuuan/sing-box-geosite@main/rule/Epic.srs",
+        "download_detour": "direct"
+      },
+      {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
         "format": "binary",
@@ -698,7 +756,7 @@
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
         "download_detour": "direct"
-      }
+      },
     ]
   }
 }
